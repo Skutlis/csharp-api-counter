@@ -22,37 +22,37 @@ public static class CounterEndpoints
     [ProducesResponseType(StatusCodes.Status200OK)]
     public static async Task<IResult> GetCounters(IRepository repo)
     {
-        return TypedResults.Ok(repo.GetCounters);
+        return TypedResults.Ok(repo.GetCounters());
     }
 
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public static async Task<IResult> GetCounter(IRepository repo)
+    public static async Task<IResult> GetCounter(IRepository repo, int id)
     {
-        return TypedResults.Ok(repo.GetCounter);
+        return TypedResults.Ok(repo.GetCounter(id));
     }
 
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public static async Task<IResult> GetCountersGreaterThan(IRepository repo)
+    public static async Task<IResult> GetCountersGreaterThan(IRepository repo, int value)
     {
-        return TypedResults.Ok(repo.GetCountersGreaterThan);
+        return TypedResults.Ok(repo.GetCountersGreaterThan(value));
     }
 
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public static async Task<IResult> GetCountersLessThan(IRepository repo)
+    public static async Task<IResult> GetCountersLessThan(IRepository repo, int value)
     {
-        return TypedResults.Ok(repo.GetCountersLessThan);
+        return TypedResults.Ok(repo.GetCountersLessThan(value));
     }
 
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public static async Task<IResult> IncreaseValueOfCounter(IRepository repo)
+    public static async Task<IResult> IncreaseValueOfCounter(IRepository repo, int id)
     {
-        return TypedResults.Ok(repo.IncreaseValueOfCounter);
+        return TypedResults.Ok(repo.IncreaseValueOfCounter(id));
     }
 
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public static async Task<IResult> DecreaseValueOfCounter(IRepository repo)
+    public static async Task<IResult> DecreaseValueOfCounter(IRepository repo, int id)
     {
-        return TypedResults.Ok(repo.DecreaseValueOfCounter);
+        return TypedResults.Ok(repo.DecreaseValueOfCounter(id));
     }
     
 
